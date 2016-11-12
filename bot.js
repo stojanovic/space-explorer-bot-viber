@@ -1,7 +1,21 @@
 'use strict';
+var botBuilder = require('claudia-bot-builder'),
+  vbTemplate = require botBuilder.viberTemplate;
 
-var botBuilder = require('claudia-bot-builder');
+var mainMenu = () => {
+  return vbTemplate.Text(`Hello, this is Space Explorer, your message was ${request.text}`)
+    .addReplyKeyboard()
+    .addKeyboardButton('Astronomy Picture of the Day', 'reply', 'APOD')
+    .addKeyboardButton('Photos from Mars Rovers', 'reply', 'ROVERS')
+    .addKeyboardButton('Space Station Position', 'reply', 'ISS')
+    .addKeyboardButton('People in Space', 'reply', 'PEOPLE_IN_SPACE')
+    .addKeyboardButton('About Bot', 'reply', 'ABOUT')
+    .get();
+};
 
 module.exports = botBuilder(request => {
+  if (request.text == 'MAIN_MENU')
+    return mainMenu();
+
   return `Hello this is Space Explorer, your message was ${request.text}.`;
 });
