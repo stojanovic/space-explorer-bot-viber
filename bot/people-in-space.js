@@ -2,7 +2,7 @@
 
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function apod() {
+module.exports = function peopleInSpace() {
   return [
     new vbTemplate.Text(`There are 6 people in Space right now.`).get(),
     new vbTemplate.Text(`- Me your bot`)

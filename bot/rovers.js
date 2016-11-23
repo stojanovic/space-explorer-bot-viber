@@ -2,7 +2,7 @@
 
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function apod() {
+module.exports = function rovers() {
   return new vbTemplate.Text(`Photos from NASA's rovers on Mars, choose which ones pictures would you like to see`)
       .addReplyKeyboard(true)
       .addKeyboardButton(`<b>Curiosity</b>`, 'Curiosity', 6, 2, {

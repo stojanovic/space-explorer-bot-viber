@@ -2,7 +2,7 @@
 
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function apod() {
+module.exports = function iss() {
   return new vbTemplate.Text(`International Space station`)
     .addReplyKeyboard(true)
     .addKeyboardButton(`<b>Website</b>`, 'ISS_WEBSITE', 6, 2, {
