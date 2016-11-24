@@ -23,6 +23,5 @@ module.exports = function spaceFlow(message, request){
   if (request.text == 'Curiosity') return curiosity()
   if (request.text == 'Opportunity') return opportunity()
   if (request.text == 'Spirit') return spirit()
-
-
+  else startMenu()
 }
