@@ -4,13 +4,17 @@ const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
 function getRoverPhotos (rover, sol, nasaApiKey) {
-  if (!sol) sol = (parseInt(Math.random() * 9) + 1) * 100
-
+  console.log(rover, sol, nasaApiKey)
+  if (!sol) {
+    let randomNum = Math.random() * 9
+    sol = (parseInt(randomNum, 0) + 1) * 100
+  }
+  console.log('before request')
   return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
     .then(response => {
       let rawBody = response.body
       console.log(rawBody)
-      let roverInfo = JSON.parse('' + rawBody)
+      let roverInfo = JSON.parse(rawBody)
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
         new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
