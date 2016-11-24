@@ -5,6 +5,6 @@ const spaceFlow = require('./bot/flow')
 
 module.exports = botBuilder((message, req) => {
   console.log(message, req)
-
+  return 'TEST'
   return spaceFlow(message, req) //`Hello this is Space Explorer, your message was ${request.text}.`;
 });
