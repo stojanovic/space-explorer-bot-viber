@@ -24,9 +24,9 @@ module.exports = function spaceFlow (message, request) {
   if (message.text == 'ISS') return iss()
   if (message.text == 'People in Space') return peopleInSpace()
   if (message.text == 'About') return about()
-  if (message.text == 'Curiosity') return curiosity()
-  if (message.text == 'Opportunity') return opportunity()
-  if (message.text == 'Spirit') return spirit()
+  if (message.text == 'Curiosity') return curiosity(request)
+  if (message.text == 'Opportunity') return opportunity(request)
+  if (message.text == 'Spirit') return spirit(request)
   
   return startMenu()
 }
