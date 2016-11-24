@@ -3,9 +3,17 @@
 const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function (a, b,c){
-  console.log(a,b,c)
-  return null
+module.exports = function (rover, sol, nasaApiKey){
+  console.log(rover, sol, nasaApiKey)
+  if (!sol) {
+    let randomNum = Math.random() * 9
+    sol = (parseInt(randomNum, 0) + 1) * 100
+  }
+  return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
+    .then(response => {
+      let rawBody = response.body
+      return rawBody
+    })
 } 
 
 /*module.exports = function getRoverPhotos (rover, sol, nasaApiKey) {
