@@ -13,10 +13,9 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
     .then(response => {
       let rawBody = response.body
       let roverInfo = JSON.parse(rawBody)
-      console.log(roverInfo.photos)
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
-        new vbTemplate.Text(` rover`).get()
+        new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get()
         /*new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
         new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()*/
       ]
