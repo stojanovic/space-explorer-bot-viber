@@ -1,5 +1,6 @@
 'use strict'
 
+const isUrl = require('./helpers/is-url')
 const startMenu = require('./start-menu')
 const apod = require('./apod')
 const whatIsApod = require('./what-is-apod')
@@ -12,6 +13,10 @@ const opportunity = require('./opportunity')
 const spirit = require('./spirit')
 
 module.exports = function spaceFlow (message, request) {
+
+  if (isUrl(message.text)) // Do nothing if user sends an url, because it's a reply to an URL button
+    return true
+
   if (request.text == 'Start') return startMenu()
   if (request.text == 'APOD') return apod(request)
   if (request.text == 'What is a Picture of the Day') return whatIsApod()
@@ -22,5 +27,6 @@ module.exports = function spaceFlow (message, request) {
   if (request.text == 'Curiosity') return curiosity()
   if (request.text == 'Opportunity') return opportunity()
   if (request.text == 'Spirit') return spirit()
-  else startMenu()
+  
+  return startMenu()
 }
