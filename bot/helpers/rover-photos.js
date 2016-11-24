@@ -49,6 +49,4 @@ function getRoverPhotos (rover, sol, nasaApiKey) {
     })
 }
 
-module.exports = {
-  getRoverPhotos: getRoverPhotos
-}
+module.exports = getRoverPhotos
