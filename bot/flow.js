@@ -12,7 +12,6 @@ const opportunity = require('./opportunity')
 const spirit = require('./spirit')
 
 module.exports = function spaceFlow (message, request) {
-  console.log('before check')
   if (request.text == 'Start') return startMenu()
   if (request.text == 'APOD') return apod(request)
   if (request.text == 'What is a Picture of the Day') return whatIsApod()
