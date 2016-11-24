@@ -3,7 +3,6 @@
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
 module.exports = function startMenu(text) {
-  return 'TEST'
   return new vbTemplate.Text(text || `Hello this is Space Explorer, what would you like me to do:`)
     .addReplyKeyboard(true)
       .addKeyboardButton(`<b>Astronomy Picture of the Day</b>`, 'APOD', 3, 2, {
