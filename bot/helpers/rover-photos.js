@@ -3,7 +3,12 @@
 const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function getRoverPhotos (rover, sol, nasaApiKey) {
+module.exports = function (a, b,c){
+  console.log(a,b,c)
+  return null
+} 
+
+/*module.exports = function getRoverPhotos (rover, sol, nasaApiKey) {
   console.log(rover, sol, nasaApiKey)
   if (!sol) {
     let randomNum = Math.random() * 9
@@ -47,5 +52,5 @@ module.exports = function getRoverPhotos (rover, sol, nasaApiKey) {
       console.log(err)
       return getRoverPhotos(rover, 1000, nasaApiKey)
     })
-}
+}*/
 
