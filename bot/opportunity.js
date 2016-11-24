@@ -1,6 +1,6 @@
 'use strict'
-const getRoverPhotos = require('./helpers/rover-photos')
 
 module.exports = function opportunity(req) {
+  const getRoverPhotos = require('./helpers/rover-photos')
   return getRoverPhotos('opportunity', null, req.env.nasaApiKey)
 }
