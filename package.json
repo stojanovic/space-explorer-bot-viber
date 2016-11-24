@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "claudia-bot-builder": "^2.5.0"
+    "claudia-bot-builder": "^2.5.0",
+    "minimal-request-promise": "^1.3.0"
   }
 }
