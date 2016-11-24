@@ -1,5 +1,7 @@
 'use strict'
 
+const roverPhotos = require('./helpers/rover-photos')
+
 module.exports = function curiosity(req) {
-  return require('./helpers/rover-photos').getRoverPhotos('curiosity', null, req.env.nasaApiKey)
+  return roverPhotos.getRoverPhotos('curiosity', null, req.env.nasaApiKey)
 }
