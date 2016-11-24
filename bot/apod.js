@@ -4,9 +4,11 @@ const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
 module.exports = function apod(req) {
+  console.log('APOD')
   return rp.get(`https://api.nasa.gov/planetary/apod?api_key=${req.env.nasaApiKey}`)
     .then(response => {
       const APOD = JSON.parse(response.body)
+      console.log(APOD)
       return [
         new vbTemplate.Text(`NASA's Astronomy Picture of the Day for ${APOD.date}`).get(),
         new vbTemplate.Text((APOD.copyright ? `, © ${APOD.copyright}` : '').get(),
