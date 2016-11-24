@@ -21,7 +21,7 @@ module.exports = function spaceFlow (message, request) {
   if (message.text == 'APOD') return apod(request)
   if (message.text == 'What is a Picture of the Day') return whatIsApod()
   if (message.text == 'Mars Rovers') return rovers()
-  if (message.text == 'ISS') return iss(request)
+  if (message.text == 'ISS') return iss()
   if (message.text == 'People in Space') return peopleInSpace()
   if (message.text == 'About') return about()
   if (message.text == 'Curiosity') return curiosity()

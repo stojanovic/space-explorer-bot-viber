@@ -3,10 +3,8 @@
 const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function iss(request) {
-  console.log(request.env)
-  console.log(request.env.nasaApiKey)
-  return rp.get(`https://api.nasa.gov/planetary/apod?api_key=${request.env.nasaApiKey}`)
+module.exports = function iss() {
+  return rp.get('https://api.wheretheiss.at/v1/satellites/25544')
     .then(response => {
       const ISS = JSON.parse(response.body)
       console.log(ISS)
