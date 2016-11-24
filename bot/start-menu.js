@@ -10,31 +10,31 @@ module.exports = function startMenu(text) {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://github.com/stojanovic/space-explorer-bot-viber/blob/master/images/galaxy.jpeg'
       })
       .addKeyboardButton(`<b>Photos from Rovers on Mars</b>`, 'Mars Rovers', 3, 2, {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://github.com/stojanovic/space-explorer-bot-viber/blob/master/images/galaxy.jpeg'
       })
       .addKeyboardButton(`<b>Where is the ISS now?</b>`, 'ISS', 3, 2, {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://github.com/stojanovic/space-explorer-bot-viber/blob/master/images/galaxy.jpeg'
       })
       .addKeyboardButton(`<b>How many people are in space right now?</b>`, 'People in Space', 3, 2, {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://github.com/stojanovic/space-explorer-bot-viber/blob/master/images/galaxy.jpeg'
       })
       .addKeyboardButton(`<b>What about me, your space bot?</b>`, 'About', 6, 1, {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://github.com/stojanovic/space-explorer-bot-viber/blob/master/images/galaxy.jpeg'
       })
     .get()
 }
