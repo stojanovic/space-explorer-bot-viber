@@ -12,7 +12,13 @@ module.exports = function (rover, sol, nasaApiKey){
   return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
     .then(response => {
       let rawBody = response.body
-      return rawBody
+      let roverInfo = rawBody//JSON.parse(rawBody)
+      let photos = roverInfo.photos.slice(0, 4)
+      let roverImages = [
+        new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
+        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
+      ]
+      return roverImages
     })
 } 
 
