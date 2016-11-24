@@ -13,11 +13,9 @@ module.exports = function peopleInSpace() {
           return response + `- ${person.name}` + ((person.craft) ? ` is on ${person.craft}` : '') + ';\n'
         }))
           .addReplyKeyboard(true)
-          .addKeyboardButton(`<b>Back to start</b>`, 'Start', 6, 1, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Back</b></font>`, 'Mars Rovers', 6, 1, {
             TextSize: 'large',
-            BgColor: '#f6d95e',
-            BgMediaType: 'picture',
-            BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+            BgColor: '#000000'
           })
           .get()
       ]

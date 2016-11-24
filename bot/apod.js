@@ -25,11 +25,9 @@ module.exports = function apod(req) {
             BgMediaType: 'picture',
             BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
           })
-          .addKeyboardButton(`<b>Back to start</b>`, 'Start', 6, 1, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 1, {
             TextSize: 'large',
-            BgColor: '#f6d95e',
-            BgMediaType: 'picture',
-            BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+            BgColor: '#000000'
           })
           .get()
       ]
