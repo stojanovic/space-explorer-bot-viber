@@ -7,33 +7,33 @@ module.exports = function startMenu(text) {
     .addReplyKeyboard(true)
       .addKeyboardButton(`<font color="#FFFFFF"><b>Astronomy Picture of the Day</b></font>`, 'APOD', 3, 2, {
         TextSize: 'large',
-        BgColor: '#f6d95e',
+        BgColor: '#000000',
         BgMediaType: 'picture',
         BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/galaxy.jpeg'
       })
       .addKeyboardButton(`<font color="#FFFFFF"><b>Photos from Rovers on Mars</b></font>`, 'Mars Rovers', 3, 2, {
         TextSize: 'large',
-        BgColor: '#f6d95e',
+        BgColor: '#000000',
         BgMediaType: 'picture',
         BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/curiosity.jpg'
       })
       .addKeyboardButton(`<font color="#FFFFFF"><b>Where is the ISS now?</b></font>`, 'ISS', 3, 2, {
         TextSize: 'large',
-        BgColor: '#f6d95e',
+        BgColor: '#000000',
         BgMediaType: 'picture',
         BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/iss.jpg'
       })
       .addKeyboardButton(`<font color="#FFFFFF"><b>How many people are in space right now?</b></font>`, 'People in Space', 3, 2, {
         TextSize: 'large',
-        BgColor: '#f6d95e',
+        BgColor: '#000000',
         BgMediaType: 'picture',
         BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/space-people.jpg'
       })
-      .addKeyboardButton(`<b>What about me, your space bot?</b>`, 'About', 6, 1, {
+      .addKeyboardButton(`<font color="#FFFFFF"><b>What about me, your space bot?</b></font>`, 'About', 6, 1, {
         TextSize: 'large',
-        BgColor: '#f6d95e',
-        BgMediaType: 'picture',
-        BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/claudia-chatbot.png'
+        BgColor: '#000000',
+        BgMediaType: 'picture'
+        //BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/claudia-chatbot.png'
       })
     .get()
 }
