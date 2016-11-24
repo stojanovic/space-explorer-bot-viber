@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "space-explorer-viber-executor",
+    "name": "space-explorer-viber",
+    "region": "eu-central-1"
+  },
+  "api": {
+    "id": "ayc73zvf7a",
+    "module": "bot"
+  }
+}

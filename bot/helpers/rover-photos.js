@@ -3,9 +3,8 @@
 const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-var getRoverPhotos = (rover, sol, nasaApiKey) => {
-  if (!sol)
-    sol = (parseInt(Math.random() * 9) + 1) * 100
+function getRoverPhotos (rover, sol, nasaApiKey) => {
+  if (!sol) sol = (parseInt(Math.random() * 9) + 1) * 100
 
   return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
     .then(response => {
@@ -15,7 +14,7 @@ var getRoverPhotos = (rover, sol, nasaApiKey) => {
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
         new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
-        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get(),
+        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
       ]
 
       photos.every(photo => {
@@ -36,9 +35,8 @@ var getRoverPhotos = (rover, sol, nasaApiKey) => {
         })
         .get()
 
-      return photos /* [
-          .addButton('Show newest photos', `PHOTOS_${rover}_${roverInfo.photos[0].rover.max_sol}`)
-      ]*/
+      return photos 
+          //.addButton('Show newest photos', `PHOTOS_${rover}_${roverInfo.photos[0].rover.max_sol}`)
     })
     .catch(err => {
       console.log(err)

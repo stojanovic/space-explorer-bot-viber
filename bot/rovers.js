@@ -9,19 +9,19 @@ module.exports = function rovers() {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/curiosity-rover.jpg'
       })
       .addKeyboardButton(`<b>Opportunity</b>`, 'Opportunity', 6, 2, {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/opportunity-rover.jpeg'
       })
       .addKeyboardButton(`<b>Spirit</b>`, 'Spirit', 6, 2, {
         TextSize: 'large',
         BgColor: '#f6d95e',
         BgMediaType: 'picture',
-        BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+        BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/spirit-rover.jpg'
       })
       .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 1, {
         TextSize: 'large',
