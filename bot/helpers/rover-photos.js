@@ -19,9 +19,9 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
         new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
       ]
       console.log(photos[0],photos[1],photos[2])
-      /*photos.map(photo => {
-        return roverImages.push( new vbTemplate.Photo(photo.img_src, `${photo.rover.name} At ${photo.earth_date} (sol ${photo.sol} ), using ${photo.camera.full_name}`).get())
-      })*/
+      photos.forEach(photo => {
+        roverImages.push( new vbTemplate.Photo(photo.img_src).get())
+      })
 
       roverImages.push(
         new vbTemplate.Text(`What would you like to do now?`)
@@ -36,8 +36,8 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
           })
           .get()
       )
-        
-      
+
+
       return roverImages
     }).catch(err => {
       console.log(err)
@@ -82,7 +82,7 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
         })
         .get()
 
-      return photos 
+      return photos
           //.addButton('Show newest photos', `PHOTOS_${rover}_${roverInfo.photos[0].rover.max_sol}`)
     })
     .catch(err => {
@@ -90,4 +90,3 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
       return getRoverPhotos(rover, 1000, nasaApiKey)
     })
 }*/
-
