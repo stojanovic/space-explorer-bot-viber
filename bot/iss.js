@@ -12,13 +12,13 @@ module.exports = function iss() {
         new vbTemplate.Location(ISS.latitude, ISS.longitude).get(),
         new vbTemplate.Text(`You can zoom out a bit to get a better ISS position overview`)
           .addReplyKeyboard(true)
-          .addKeyboardButton(`<b>Website</b>`, 'http://iss.astroviewer.net', 6, 2, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Website</b></font>`, 'http://iss.astroviewer.net', 6, 2, {
             TextSize: 'large',
             BgColor: '#f6d95e',
             BgMediaType: 'picture',
-            BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+            BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/galaxy.jpeg'
           })
-          .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 1, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 2, {
             TextSize: 'large',
             BgColor: '#000000'
           })

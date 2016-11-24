@@ -18,7 +18,6 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
         new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
         new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
       ]
-      console.log(photos[0],photos[1],photos[2])
       photos.forEach(photo => {
         roverImages.push( new vbTemplate.Photo(photo.img_src).get())
       })
@@ -26,11 +25,11 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
       roverImages.push(
         new vbTemplate.Text(`What would you like to do now?`)
           .addReplyKeyboard(true)
-          .addKeyboardButton(`<font color="#FFFFFF"><b>Visit Wikipedia</b></font>`, `https://en.wikipedia.org/wiki/${rover}_(rover)`, 6, 1, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Visit Wikipedia</b></font>`, `https://en.wikipedia.org/wiki/${rover}_(rover)`, 6, 2, {
             TextSize: 'large',
             BgColor: '#000000'
           })
-          .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 1, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 2, {
             TextSize: 'large',
             BgColor: '#000000'
           })

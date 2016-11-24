@@ -15,11 +15,11 @@ module.exports = function apod(req) {
           APOD.media_type === 'image' ? new vbTemplate.Photo(APOD.url, APOD.title).get() : new vbTemplate.Url(APOD.url).get(),
         new vbTemplate.Text(APOD.explanation)
           .addReplyKeyboard(true)
-          .addKeyboardButton(`<b>What is APOD - Picture of the Day</b>`, 'What is a Picture of the Day', 6, 2, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>What is APOD - Picture of the Day</b></font>`, 'What is a Picture of the Day', 6, 2, {
             TextSize: 'large',
             BgColor: '#f6d95e',
             BgMediaType: 'picture',
-            BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+            BgMedia: 'https://raw.githubusercontent.com/stojanovic/space-explorer-bot-viber/master/images/galaxy.jpeg'
           })
           .addKeyboardButton(`<font color="#FFFFFF"><b>Visit Website</b></font>`, 'http://apod.nasa.gov/apod/', 6, 1, {
             TextSize: 'large',
