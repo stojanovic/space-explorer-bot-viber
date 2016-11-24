@@ -3,7 +3,7 @@
 const rp = require('minimal-request-promise')
 const vbTemplate = require('claudia-bot-builder').viberTemplate
 
-module.exports = function (rover, sol, nasaApiKey){
+module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
   console.log(rover, sol, nasaApiKey)
   if (!sol) {
     let randomNum = Math.random() * 9
@@ -12,15 +12,20 @@ module.exports = function (rover, sol, nasaApiKey){
   return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
     .then(response => {
       let rawBody = response.body
-      let roverInfo = rawBody//JSON.parse(rawBody)
+      let roverInfo = rawBody //JSON.parse(rawBody)
+      console.log(roverInfo.photos)
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
-        new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
-        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
+        new vbTemplate.Text(` rover`).get()
+        /*new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
+        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()*/
       ]
       return roverImages
+    }).catch(err => {
+      console.log(err)
+      return getRoverPhotos(rover, 1000, nasaApiKey)
     })
-} 
+}
 
 /*module.exports = function getRoverPhotos (rover, sol, nasaApiKey) {
   console.log(rover, sol, nasaApiKey)
