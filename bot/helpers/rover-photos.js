@@ -16,7 +16,7 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
         new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
-        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get
+        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
       ]
 
       roverImages.push(
