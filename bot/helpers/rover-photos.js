@@ -9,7 +9,7 @@ function getRoverPhotos (rover, sol, nasaApiKey) {
   return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
     .then(response => {
       let rawBody = response.body
-
+      console.log(rawBody)
       let roverInfo = JSON.parse('' + rawBody)
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
@@ -17,9 +17,10 @@ function getRoverPhotos (rover, sol, nasaApiKey) {
         new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()
       ]
 
-      photos.every(photo => {
+      photos.map(photo => {
+        console.log(photo.img_src)
         return roverImages.push(
-          new vbTemplate.Photo(photo.img_src, photo.rover.name +' At ' + photo.earth_date + ' (sol ' + photo.sol + '), using ' + photo.camera.full_name).get(),
+          new vbTemplate.Photo(photo.img_src, `${photo.rover.name} At ${photo.earth_date} (sol ${photo.sol} ), using ${photo.camera.full_name}`).get(),
         )
       })
 
