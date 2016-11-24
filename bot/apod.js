@@ -11,7 +11,7 @@ module.exports = function apod(req) {
       console.log(APOD)
       return [
         new vbTemplate.Text(`NASA's Astronomy Picture of the Day for ${APOD.date}`).get(),
-        new vbTemplate.Text(APOD.copyright ? `, © ${APOD.copyright}` : '').get(),
+        new vbTemplate.Text(APOD.copyright ? `, © ${APOD.copyright}` : 'NASA copyright').get(),
           APOD.media_type === 'image' ? new vbTemplate.Photo(APOD.url, APOD.title).get() : new vbTemplate.Url(APOD.url).get(),
         new vbTemplate.Text(APOD.explanation)
           .addReplyKeyboard(true)
@@ -21,11 +21,9 @@ module.exports = function apod(req) {
             BgMediaType: 'picture',
             BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
           })
-          .addKeyboardButton(`<b>Visit Website</b>`, 'http://apod.nasa.gov/apod/', 6, 1, {
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Visit Website</b></font>`, 'http://apod.nasa.gov/apod/', 6, 1, {
             TextSize: 'large',
-            BgColor: '#f6d95e',
-            BgMediaType: 'picture',
-            BgMedia: 'https://s3.eu-central-1.amazonaws.com/laptopfriendly/lf-buttons-all-locations-icons.png'
+            BgColor: '#000000'
           })
           .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 1, {
             TextSize: 'large',
