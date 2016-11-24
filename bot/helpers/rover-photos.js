@@ -12,7 +12,7 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
   return rp.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&api_key=${nasaApiKey}`)
     .then(response => {
       let rawBody = response.body
-      let roverInfo = rawBody //JSON.parse(rawBody)
+      let roverInfo = JSON.parse(rawBody)
       console.log(roverInfo.photos)
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
