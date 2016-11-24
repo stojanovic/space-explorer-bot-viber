@@ -15,10 +15,21 @@ module.exports = function getRoverPhotos(rover, sol, nasaApiKey){
       let roverInfo = JSON.parse(rawBody)
       let photos = roverInfo.photos.slice(0, 4)
       let roverImages = [
-        new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get()
-        /*new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
-        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get()*/
+        new vbTemplate.Text(`${roverInfo.photos[0].rover.name} rover`).get(),
+        new vbTemplate.Text(`Landing Date: ${roverInfo.photos[0].rover.landing_date} \nTotal photos: ${roverInfo.photos[0].rover.total_photos}`).get
       ]
+
+      roverImages.push(
+        new vbTemplate.Text(`What would you like to do now?`)
+          .addReplyKeyboard(true)
+          .addKeyboardButton(`<font color="#FFFFFF"><b>Back to start</b></font>`, 'Start', 6, 1, {
+            TextSize: 'large',
+            BgColor: '#000000'
+          })
+          .get()
+      )
+        
+      
       return roverImages
     }).catch(err => {
       console.log(err)
