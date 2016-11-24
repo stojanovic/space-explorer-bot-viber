@@ -11,7 +11,7 @@ module.exports = function apod(req) {
         new vbTemplate.Text(`NASA's Astronomy Picture of the Day for ${APOD.date}`).get(),
         new vbTemplate.Text((APOD.copyright ? `, © ${APOD.copyright}` : '').get(),
           APOD.media_type === 'image' ? new vbTemplate.Photo(APOD.url, APOD.title).get() : new vbTemplate.Url(APOD.url).get()),
-        new vbTemplate.Text(APOD.explanation).get()
+        new vbTemplate.Text(APOD.explanation)
           .addReplyKeyboard(true)
           .addKeyboardButton(`<b>What is APOD - Picture of the Day</b>`, 'What is a Picture of the Day', 6, 2, {
             TextSize: 'large',
